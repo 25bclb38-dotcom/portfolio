@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #0f172a;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: #1e293b;
+}
+
+.profile {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  align-items: center;
+}
+
+.profile img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+section {
+  padding: 30px;
+}
+
+.cert-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.cert-grid img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  padding: 10px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.messages {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
