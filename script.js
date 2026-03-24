@@ -8,7 +8,7 @@ form.addEventListener("submit", async function(e) {
   const message = document.getElementById("message").value;
 
   try {
-    const response = await fetch("http://localhost:5000/send-message", {
+    const response = await fetch("http://portfolio-p72w.onrender.com/send-message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
