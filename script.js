@@ -1,30 +1,31 @@
 const form = document.getElementById("contactForm");
 
-form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
 
-    try {
-        const response = await fetch("https://portfolio-p72w.onrender.com/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ name, email, message })
-        });
+  try {
+    const response = await fetch("http://localhost:5000/send-message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name, email, message })
+    });
 
-        if (response.ok) {
-            alert("Message sent successfully!");
-            form.reset();
-        } else {
-            alert("Error sending message");
-        }
+    const data = await response.json();
 
-    } catch (error) {
-        alert("Server error");
-        console.error(error);
+    if (data.success) {
+      alert("Message saved to database!");
+      form.reset();
+    } else {
+      alert("Error saving message");
     }
+
+  } catch (error) {
+    alert("Server not running");
+  }
 });
